@@ -1,12 +1,14 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
-import { AboutPage, HomePage, BlogPage } from './components'
+import { AboutPage, HomePage, BlogPage, Menu, BlogPost } from './components'
 
 export const App = () => {
   return (
     <BrowserRouter>
+      <Menu />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/blog" element={<BlogPage />} />
+        <Route path='/blog/:url' element={<BlogPost />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="*" element={<Navigate to='/' />} />
       </Routes>
