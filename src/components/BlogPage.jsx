@@ -1,3 +1,4 @@
+import { Outlet } from 'react-router-dom'
 import { BlogLink } from './BlogLink'
 
 export const blogposts = [
@@ -18,9 +19,8 @@ export const BlogPage = () => {
     <div>
 
       <h2>BlogPage</h2>
-
+      <Outlet />
       <ul>
-
         {blogposts.map(post => (
           <BlogLink key={post.id} url={post.url} title={post.title} />
         ))}
