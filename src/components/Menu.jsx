@@ -5,16 +5,22 @@ export const Menu = () => {
     <nav>
       <ul>
         <li>
-          <Link to={'/home'}>Home</Link>
+          <Link to='/home'>Home</Link>
         </li>
         <li>
-          <Link to={'/about'}>About</Link>
+          <Link to='/about'>About</Link>
         </li>
         <li>
-          <Link to={'/blog'}>Blog</Link>
+          <Link to='/blog'>Blog</Link>
         </li>
         <li>
-          <Link></Link>
+          <Link to='/login'>Log in</Link>
+        </li>
+        <li>
+          <Link to='/logout'>Log out</Link>
+        </li>
+        <li>
+          <Link to='/profile'>Profile</Link>
         </li>
       </ul>
     </nav>
