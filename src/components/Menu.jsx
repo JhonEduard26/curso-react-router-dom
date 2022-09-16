@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom'
+import { useAuth } from '../hooks/useAuth'
 
 export const Menu = () => {
+  const { token } = useAuth()
+
   return (
     <nav>
       <ul>
@@ -13,15 +16,24 @@ export const Menu = () => {
         <li>
           <Link to='/blog'>Blog</Link>
         </li>
-        <li>
-          <Link to='/login'>Log in</Link>
-        </li>
-        <li>
-          <Link to='/logout'>Log out</Link>
-        </li>
-        <li>
-          <Link to='/profile'>Profile</Link>
-        </li>
+        {
+          !token &&
+          <li>
+            <Link to='/login'>Log in</Link>
+          </li>
+        }
+        {
+          token &&
+          <li>
+            <Link to='/logout'>Log out</Link>
+          </li>
+        }
+        {
+          token &&
+          <li>
+            <Link to='/profile'>Profile</Link>
+          </li>
+        }
       </ul>
     </nav>
   )

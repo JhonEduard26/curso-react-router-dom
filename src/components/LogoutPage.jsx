@@ -13,7 +13,7 @@ export const LogoutPage = () => {
 
   return (
     <>
-      <h1>Login Page</h1>
+      <h1>Log out Page</h1>
 
       <form onSubmit={handleLogout}>
         <button type="submit">Log out</button>

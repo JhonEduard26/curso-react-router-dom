@@ -8,6 +8,7 @@ export const LoginPage = () => {
   const auth = useAuth()
   const navigate = useNavigate()
 
+
   const handleSubmit = (event) => {
     event.preventDefault()
     auth.login(name, password)

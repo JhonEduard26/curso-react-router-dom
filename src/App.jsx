@@ -1,6 +1,7 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { AboutPage, HomePage, BlogPage, Menu, BlogPost, LoginPage, ProfilePage } from './components'
 import { LogoutPage } from './components/LogoutPage'
+import { ProtectedRoutes } from './router/ProtectedRoutes'
 
 export const App = () => {
   return (
@@ -12,8 +13,16 @@ export const App = () => {
           <Route path=':url' element={<BlogPost />} />
         </Route>
         <Route path='login' element={<LoginPage />} />
-        <Route path='logout' element={<LogoutPage />} />
-        <Route path='profile' element={<ProfilePage />} />
+        <Route path='logout' element={
+          <ProtectedRoutes>
+            <LogoutPage />
+          </ProtectedRoutes>
+        } />
+        <Route path='profile' element={
+          <ProtectedRoutes>
+            <ProfilePage />
+          </ProtectedRoutes>
+        } />
         <Route path="about" element={<AboutPage />} />
         <Route path="*" element={<Navigate to='/' />} />
       </Routes>
